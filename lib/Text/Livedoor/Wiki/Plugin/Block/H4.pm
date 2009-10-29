@@ -22,12 +22,16 @@ sub check {
     # start rule
     #  1. start with **~
     #  2. not end yet
-    if ( $line =~ /^\*\*[^\*]./ && !$scratchpad->{$key} && !$class->get_child($id)){
+    #if ( $line =~ /^\*\*[^\*]./ && !$scratchpad->{$key} && !$class->get_child($id)){
+    if ( $line =~ /^\*\*[^\*]+/ && !$scratchpad->{$key} && !$class->get_child($id)){
         $scratchpad->{$key} = 1 ;
         $line =~ s/^\*\*//;
         my $title =  $inline->parse($line);
         my $header = '';
 
+        #XXX
+        $Text::Livedoor::Wiki::scratchpad->{skip_ajust_block_break} = '1';
+        
         if( $skip_catalog ) {
             $header = sprintf( qq|<div class="title-2"><h4>%s</h4></div>\n| ,  $title ) ;
         }

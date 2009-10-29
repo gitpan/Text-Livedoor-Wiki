@@ -17,12 +17,17 @@ sub check {
     my $row;
     my $option_str;
     my $processing = $scratchpad->{block}{$id}{processing};
+        
+    
     # rule
     # 1. [+]~ or [-]~
     # 2. not starting.
     # 3. this line
     # 4. no child found
     if ((my ( $mark ) = $line =~ /^\[(\+|-)\]/) && !$processing && !$on_next  && !$class->get_child($id) ){
+        #XXX    
+        $Text::Livedoor::Wiki::scratchpad->{skip_ajust_block_break} = '1';
+        
         $scratchpad->{block}{$id}{processing} = 1 ;
         my $toggle =  $mark  eq '+'   ? 'close'  : 'open';
        
@@ -60,7 +65,9 @@ sub get {
     $title = $inline->parse($title);
 
     # END LINE
-    pop @$items if $items->[-1]{line} eq "\n";
+    if ( scalar @$items ) { # in case there is no line in $items
+        pop @$items if $items->[-1]{line} eq "\n";
+    }
 
     my $html = '';
     $html .= $_->{line}  . "\n" for @$items;
@@ -103,7 +110,9 @@ sub mobile {
     $title = $inline->parse($title);
 
     # END LINE
-    pop @$items if $items->[-1]{line} eq "\n";
+    if ( scalar @$items ) {
+        pop @$items if $items->[-1]{line} eq "\n";
+    }
 
     my $html = '';
     $html .= $_->{line}  . "\n" for @$items;

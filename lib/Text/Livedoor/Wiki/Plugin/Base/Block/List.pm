@@ -53,7 +53,7 @@ Text::Livedoor::Wiki::Plugin::Base::Block::List - Base Class For UL / OL Block P
 
 =head1 DESCRIPTION
 
-base class for L<Text::Livedoor::Wiki::Plugin::Inline::UL> and L<Text::Livedoor::Wiki::Plugin::Inline::OL>
+base class for L<Text::Livedoor::Wiki::Plugin::Block::UL> and L<Text::Livedoor::Wiki::Plugin::Block::OL>
 
 =head1 SYNOPSIS
 

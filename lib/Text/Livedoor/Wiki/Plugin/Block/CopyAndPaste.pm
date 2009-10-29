@@ -18,12 +18,17 @@ sub check {
     my $option_str;
     my $processing = $scratchpad->{block}{$id}{processing};
 
+
+
     # header
     if (( ( $row, $option_str ) = $line =~ /^=\|([a-z0-9A-Z\-_]*)(?:\(([^\)\|]+)\))?\|$/) && !$processing  && !$on_next ){
         my $res = { id => $id };
         $row ||= 'PLAIN-BOX';
         $res->{class_name} = $row;
 
+        #XXX
+        $Text::Livedoor::Wiki::scratchpad->{skip_ajust_block_break} = '1';
+        
         my $box = 'pre';
         if ($option_str) {
             my @params = split( ';', $option_str );

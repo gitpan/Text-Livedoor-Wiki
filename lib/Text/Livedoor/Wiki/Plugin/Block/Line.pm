@@ -11,6 +11,9 @@ sub check {
     my $id          = $args->{id};
     my $on_next     = $args->{on_next};
     if( $line =~ /^----/ ) {
+        #XXX
+        $Text::Livedoor::Wiki::scratchpad->{skip_ajust_block_break} = '1';
+        
         $line =~ s/^----//;
         return  { line => $line  };
     }

@@ -19,13 +19,17 @@ sub check {
     my $skip_catalog   = $Text::Livedoor::Wiki::opts->{skip_catalog};
 
     my $key = 'h3_is_active_' . $id;
-    if ( $line =~ /^\*[^\*]./ && !$on_next && !$class->get_child($id) ){
+    #if ( $line =~ /^\*[^\*]./ && !$on_next && !$class->get_child($id) ){
+    if ( $line =~ /^\*[^\*]+/ && !$on_next && !$class->get_child($id) ){
         $scratchpad->{$key} = 1 ;
         $line =~ s/^\*//;
         my $title =  $inline->parse($line);
         my $header = '';
         my $header_meta = {};
 
+        #XXX
+        $Text::Livedoor::Wiki::scratchpad->{skip_ajust_block_break} = '1';
+        
         if( $skip_catalog ) {
             $header = sprintf( qq|<div class="title-1"><h3>%s</h3></div>\n| ,  $title ) ;
         }

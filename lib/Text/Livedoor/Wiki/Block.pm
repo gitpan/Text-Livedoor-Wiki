@@ -77,7 +77,8 @@ sub parse {
                     }
                 }
                 else {
-                    $html =~ s/<br \/>\n$//;
+                    #$html =~ s/<br \/>\n$//;
+                    $html =~ s/<br \/>\n$// unless $Text::Livedoor::Wiki::scratchpad->{skip_ajust_block_break};
                     $html .=  $self->on_mobile ? $block->mobile(  $self, $self->{inline} , \@items) : $block->get( $self , $self->{inline} , \@items );
                     @items = ();
                     $Text::Livedoor::Wiki::scratchpad->{core}{block_uid}++;

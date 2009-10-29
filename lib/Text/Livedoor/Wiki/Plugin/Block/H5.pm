@@ -24,6 +24,9 @@ sub check {
         my $title =  $inline->parse($line);
         my $header = '';
 
+        #XXX
+        $Text::Livedoor::Wiki::scratchpad->{skip_ajust_block_break} = '1';
+        
         if( $skip_catalog ) {
             $header = sprintf( qq|<div class="title-3"><h5>%s</h5></div>\n| ,  $title ) ;
         }

@@ -97,6 +97,7 @@ __END__
     'Text::Livedoor::Wiki::Plugin::Function::Image',
     'Text::Livedoor::Wiki::Plugin::Function::Jimakuin',
     'Text::Livedoor::Wiki::Plugin::Function::Lislog',
+    'Text::Livedoor::Wiki::Plugin::Function::Pad',
     'Text::Livedoor::Wiki::Plugin::Function::Size',
     'Text::Livedoor::Wiki::Plugin::Function::Superscript',
     'Text::Livedoor::Wiki::Plugin::Function::Youtube'

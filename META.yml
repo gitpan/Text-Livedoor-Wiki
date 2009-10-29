@@ -22,11 +22,11 @@ requires:
   Class::Data::Inheritable: 0
   Module::Pluggable: 0
   Scalar::Util: 0
-  Test::Base: 0
+  Test::Base: 0.56
   Test::Deep: 0
   Test::Exception: 0
   Test::Memory::Cycle: 0
   UNIVERSAL::require: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.01
+version: 0.02

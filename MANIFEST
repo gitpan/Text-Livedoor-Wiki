@@ -41,6 +41,7 @@ lib/Text/Livedoor/Wiki/Plugin/Function/GoogleVideo.pm
 lib/Text/Livedoor/Wiki/Plugin/Function/Image.pm
 lib/Text/Livedoor/Wiki/Plugin/Function/Jimakuin.pm
 lib/Text/Livedoor/Wiki/Plugin/Function/Lislog.pm
+lib/Text/Livedoor/Wiki/Plugin/Function/Pad.pm
 lib/Text/Livedoor/Wiki/Plugin/Function/Size.pm
 lib/Text/Livedoor/Wiki/Plugin/Function/Superscript.pm
 lib/Text/Livedoor/Wiki/Plugin/Function/Youtube.pm
@@ -103,6 +104,7 @@ t/function/google_video.dat
 t/function/image.dat
 t/function/jimakuin.dat
 t/function/lislog.dat
+t/function/pad.dat
 t/function/size.dat
 t/function/superscript.dat
 t/function/test.dat

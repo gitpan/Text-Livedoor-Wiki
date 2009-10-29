@@ -10,7 +10,7 @@ use Text::Livedoor::Wiki::IDKeeper;
 use Text::Livedoor::Wiki::Inline;
 use Text::Livedoor::Wiki::Plugin;
 
-our $VERSION ='0.01';
+our $VERSION ='0.02';
 
 # Everybody can not be happy but I am happy.
 sub new {
@@ -108,7 +108,7 @@ sub _build {
         $html =~ s/\n#contents/\n$contents\n/g;
     } 
     else {
-        $html =~ s/\n#contents/\n/g;
+        $html =~ s/\n#contents<br \/>\n/\n/g;
     }
 
     return $html;
@@ -132,7 +132,7 @@ Text::Livedoor::Wiki - Perl extension for formatting text with livedoor Wiki Sty
 
 =head1 DESCRIPTION
 
-This is livedoor Wiki Style Parser.  you can download CSS and images from http://static.wiki.livedoor.jp/download/livedoor-wiki.0.01.tar.gz
+This is livedoor Wiki Style Parser.  you can download CSS and images from http://static.wiki.livedoor.jp/download/livedoor-wiki.0.02.tar.gz
 
 =head1 METHOD
 
